@@ -90,6 +90,14 @@ public class MyPatientConsultationsFragment extends Fragment {
         consultations.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                convertView = inflater.inflate(R.layout.mypatient_consultation_row, null);
+
+                final CircleImageView doctorPicture = convertView.findViewById(R.id.profile_image);
+                final TextView doctorFullName = convertView.findViewById(R.id.fullName);
+                final TextView day = convertView.findViewById(R.id.day);
+                final ImageView deleteView = convertView.findViewById(R.id.deleteView);
+                final ImageView editView = convertView.findViewById(R.id.editView);
+
                 Intent intent = new Intent(getContext(), ConsultationInfoActivity.class);
                 Consultation consultation = myConsultations.get(position);
                 intent.putExtra("doctorName", consultation.getDoctorName());
