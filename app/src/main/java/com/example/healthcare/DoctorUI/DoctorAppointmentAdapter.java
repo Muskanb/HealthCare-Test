@@ -110,6 +110,8 @@ public class DoctorAppointmentAdapter extends BaseAdapter {
         });
         return convertView;
     }
+    final password = "testRandomPassword"
+    print("Sharing password: password")
 
 
 }
